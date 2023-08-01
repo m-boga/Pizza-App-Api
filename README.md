@@ -1,7 +1,7 @@
 # Pizza Sipariş Uygulaması
 
-Pizza için Türkiye genelinde binlerce şubesi bulunan yeni bir sipariş uygulaması geliştirildi. 
-Uygulamada, müşteriye sipariş verebileceği şubeleri listelerken,en fazla 10km uzaklıkta olan yalnızca en yakın 5 restoranı gösteriliyor.
+Türkiye genelinde binlerce şubesi bulunan yeni bir sipariş uygulaması geliştirildi. 
+Uygulamada, müşteriye sipariş verebileceği şubeleri listelerken,en fazla 10 km uzaklıkta olan yalnızca en yakın 5 restoranı gösteriliyor.
 
 ## Teknolojiler
 
@@ -43,9 +43,10 @@ Kullanıcı, Infoset's Pizza'nın uygulamasını kullanarak en yakın şubeleri 
 - API, bu şubeleri bir listeye dökerek kullanıcıya geri döndürür. Bu liste, şubenin id, name, latitude, ve longitude bilgilerini içerir.
 
 Örnek : 41.0614 (Latitude), 28.9854 (Longitude).
-
-
-    Örnek : 41.0614 (Latitude), 28.9854 (Longitude).
+	
+Response body
+	
+  
           [
             {
               "id": 3,
