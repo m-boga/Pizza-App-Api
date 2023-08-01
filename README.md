@@ -11,6 +11,27 @@ Bu projede aşağıdaki teknolojiler kullanıldı:
 - Entity Framework Core
 - MsSQL
 
+Haversine Formülü
+
+Uygulamanın, kullanıcı konumuna en yakın 5 şubeyi belirleme işlemi sırasında Haversine formülü kullanılmaktadır. Haversine formülü, dünya üzerindeki iki nokta arasındaki mesafeyi hesaplar. Bu formül, kullanıcı konumu ile restoran şubelerinin konumları arasındaki mesafeyi belirlemek için kullanılır.
+Haversine formülü aşağıdaki gibidir:
+
+	    a = sin²(Δφ/2) + cos φ1 ⋅ cos φ2 ⋅ sin²(Δλ/2)
+	    c = 2 ⋅ atan2( √a, √(1−a) )
+	    d = R ⋅ c
+
+
+Burada:
+
+	    φ1, φ2: iki noktanın enlem değerleri,
+	    λ1, λ2: iki noktanın boylam değerleri,
+	    R: Dünya'nın yarıçapı (ortalama olarak 6,371km),
+	    Δφ = φ2 - φ1: enlem farkı,
+	    Δλ = λ2 - λ1: boylam farkı.
+
+Bu formül, RestaurantBranchRepository.cs dosyasındaki bir fonksiyonda kullanılmıştır ve bu fonksiyon, kullanıcının konumuna en fazla 10km uzaklıkta olan ve en yakın 5 şubeyi belirlemek için kullanılır. Haversine formülü sayesinde, uygulama düz bir çizgi üzerinde değil, Dünya'nın yüzeyinde gerçek bir mesafe hesaplaması yapar. Bu da sonuçların doğruluğunu artırır.
+
+
 ## Proje Yapısı
 
 Bu proje aşağıdaki klasör yapısına sahiptir:
